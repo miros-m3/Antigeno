@@ -1,13 +1,19 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UIElements;
+
+
 
 public class KeyCollider : MonoBehaviour
 {
     public GameObject player;
     public GameObject Door;
     public GameObject Key;
-
+    public Sprite KeyImageVisible;
+   // public Sprite KeyImageHiden;
+    public GameObject KeyUI;
+    
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -33,6 +39,7 @@ public class KeyCollider : MonoBehaviour
 
             Key.SetActive(false);
 
+            KeyUI.GetComponent<UnityEngine.UI.Image>().sprite = KeyImageVisible;
         }
 
 
