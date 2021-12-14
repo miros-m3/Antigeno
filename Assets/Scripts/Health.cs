@@ -25,6 +25,18 @@ public class Health : MonoBehaviour
         }
     }
 
+    public virtual void TakeHealth(int _damage)
+    {
+        currentHealth += _damage;
+        if (gameObject.tag == "Player")
+            UIManager.instance.SetPlayerLife(currentHealth / totalHealth);
+        if (currentHealth >= 100)
+        {
+            
+        }
+
+    }
+
     public void Death() {
         Debug.Log(this.name + " is death");
         animator.SetTrigger("die");

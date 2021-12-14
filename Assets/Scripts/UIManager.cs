@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class UIManager : MonoBehaviour
 {
@@ -21,6 +22,8 @@ public class UIManager : MonoBehaviour
     public GameObject victoryPanelObject;
     public Text pointsText;
 
+    public Button ReloadButton;
+
     public void SetPlayerLife(float _value) {
         playerLife.fillAmount = _value;
     }
@@ -28,4 +31,10 @@ public class UIManager : MonoBehaviour
     public void SetPointsText(int _value) {
         pointsText.text = _value.ToString();
     }
+
+    public void ResetScene()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+    }
+
 }

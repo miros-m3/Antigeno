@@ -13,6 +13,8 @@ public class KeyCollider : MonoBehaviour
     public Sprite KeyImageVisible;
    // public Sprite KeyImageHiden;
     public GameObject KeyUI;
+    public AudioClip OpenDoorSound;
+    public AudioSource DoorSound;
     
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -40,6 +42,8 @@ public class KeyCollider : MonoBehaviour
             Key.SetActive(false);
 
             KeyUI.GetComponent<UnityEngine.UI.Image>().sprite = KeyImageVisible;
+
+            DoorSound.PlayOneShot(OpenDoorSound);
         }
 
 

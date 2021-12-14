@@ -32,6 +32,7 @@ public class HazardDamage : MonoBehaviour
         {
             player.GetComponent<Health>().TakeDamage(attackDamage);
             Debug.Log(player.gameObject.name + " has taken " + attackDamage + " of damage.");
+            
         }
 
 
