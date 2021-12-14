@@ -12,6 +12,7 @@ public class PlayerMovement : MonoBehaviour
 
     private float horizontalmove = 0f;
     private bool jump = false;
+    public bool crouch = false;
 
     private void Start()
     {
@@ -25,12 +26,22 @@ public class PlayerMovement : MonoBehaviour
             return;
 
         horizontalmove = Input.GetAxisRaw("Horizontal") * runSpeed;
+
+
         if (Input.GetButtonDown("Jump")) {
             jump = true;
             playerAnimator.SetTrigger("jump");
             playerAnimator.SetBool("isGrounded", false);
         }
+     //   if (Input.GetButtonDown("crouch"))
+       // {
+         //   crouch = true;
+    //        playerAnimator.SetTrigger("crouch");
+      //      }
     }
+
+  
+
 
     private void FixedUpdate()
     {

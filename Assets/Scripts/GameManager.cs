@@ -19,6 +19,7 @@ public class GameManager : MonoBehaviour
 
     private bool isGameOver = false;
     private int points;
+    //private bool crouchInstance = false;
 
     // Start is called before the first frame update
     void Start()
@@ -29,6 +30,7 @@ public class GameManager : MonoBehaviour
         UIManager.instance.victoryPanelObject.SetActive(false);
         UIManager.instance.SetPointsText(0);
         isGameOver = false;
+       // crouchInstance = false;
     }
 
     public void WinGame() {
@@ -40,6 +42,11 @@ public class GameManager : MonoBehaviour
         isGameOver = true;
     }
 
+   // public void crouch()
+    //{
+      //  if (crouchInstance) {
+        //    return; }
+    //}
     public void LoseGame()
     {
 
