@@ -69,6 +69,7 @@ public class CharacterController2D : MonoBehaviour
 		{
 			player.transform.parent = collision.gameObject.transform;
 		}
+		
 	}
 
 	private void OnCollisionExit2D(Collision2D collision)
