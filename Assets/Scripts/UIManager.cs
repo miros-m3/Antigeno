@@ -7,6 +7,7 @@ using UnityEngine.SceneManagement;
 public class UIManager : MonoBehaviour
 {
     private static UIManager _instance;
+    private bool paused = false;
     public static UIManager instance
     {
         get {
@@ -35,17 +36,44 @@ public class UIManager : MonoBehaviour
 
     public void ResetScene()
     {
+        Time.timeScale = 1F;
+        Debug.Log(this.name + " is resumed");
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
     
     public void PauseGame(){
+
+        // paused = true;
         Time.timeScale = 0F;
+        Debug.Log(this.name + " is paused");
         PausedMenu.SetActive(true);
+
     }
+ 
     public void resumeGame()
     {
+        // paused = false;
         Time.timeScale = 1F;
+        Debug.Log(this.name + " is resumed");
         PausedMenu.SetActive(false);
+      
+    }
+    public void GetMainMenu()
+    {
+        Time.timeScale = 1F;
+        Debug.Log(this.name + " is resumed");
+        //paused = false;
+        SceneManager.LoadScene("Main Menu");
+        
     }
 
+    // private void FixedUpdate(){
+
+    //    if (paused == true){
+    //  Time.timeScale = 0F;
+    //   Debug.Log(this.name + " is paused")}
+    //    if (paused == false){
+    //    Time.timeScale = 1F;
+    // Debug.Log(this.name + " is resumed");}
+    
 }

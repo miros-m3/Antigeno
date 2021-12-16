@@ -42,11 +42,7 @@ public class GameManager : MonoBehaviour
         isGameOver = true;
     }
 
-   // public void crouch()
-    //{
-      //  if (crouchInstance) {
-        //    return; }
-    //}
+
     public void LoseGame()
     {
 
