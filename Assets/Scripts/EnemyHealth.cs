@@ -13,7 +13,14 @@ public class EnemyHealth : Health
             enemyLifeImage.fillAmount = (currentHealth / totalHealth);
         if (currentHealth <= 0)
         {
-            Death();
+            EnemyDeath();
         }
+    }
+    public void EnemyDeath()
+    {
+        Debug.Log(this.name + " is death");
+        StartCoroutine(CR_DeathTimer());
+        if (gameObject.tag == "Enemy")
+            GameManager.instance.WinGame();
     }
 }
