@@ -9,6 +9,7 @@ public class Health : MonoBehaviour
 
     private bool isAlive = true;
     protected float currentHealth;
+    
 
     protected void Start()
     {

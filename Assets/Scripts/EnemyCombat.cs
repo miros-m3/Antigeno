@@ -12,7 +12,8 @@ public class EnemyCombat : MonoBehaviour
     public LayerMask playerLayer;
     public int attackDamage = 20;
     public float attackCooldown = 2f;
-
+    public AudioSource Listener;
+    public AudioClip PainSound;
     [HideInInspector]
     public bool isInAttackRange = false;
 
@@ -62,6 +63,7 @@ public class EnemyCombat : MonoBehaviour
         {
             player.GetComponent<Health>().TakeDamage(attackDamage);
             Debug.Log(player.gameObject.name + " has taken " + attackDamage + " of damage.");
+            Listener.PlayOneShot(PainSound);
         }
 
         

@@ -8,7 +8,8 @@ public class HazardDamage : MonoBehaviour
 {
     public int attackDamage = 50;
     public GameObject player;
-
+    public AudioSource Listener;
+    public AudioClip PainSound;
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -32,7 +33,8 @@ public class HazardDamage : MonoBehaviour
         {
             player.GetComponent<Health>().TakeDamage(attackDamage);
             Debug.Log(player.gameObject.name + " has taken " + attackDamage + " of damage.");
-            
+            Listener.PlayOneShot(PainSound);
+
         }
 
 
