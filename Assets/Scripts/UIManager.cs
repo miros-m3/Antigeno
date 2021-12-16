@@ -21,8 +21,9 @@ public class UIManager : MonoBehaviour
     public GameObject gameOverObject;
     public GameObject victoryPanelObject;
     public Text pointsText;
+    public GameObject PausedMenu;
 
-    public Button ReloadButton;
+    //public Button ReloadButton;
 
     public void SetPlayerLife(float _value) {
         playerLife.fillAmount = _value;
@@ -35,6 +36,16 @@ public class UIManager : MonoBehaviour
     public void ResetScene()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+    }
+    
+    public void PauseGame(){
+        Time.timeScale = 0F;
+        PausedMenu.SetActive(true);
+    }
+    public void resumeGame()
+    {
+        Time.timeScale = 1F;
+        PausedMenu.SetActive(false);
     }
 
 }
